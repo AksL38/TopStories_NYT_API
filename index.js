@@ -53,10 +53,15 @@ function navigate(section, parent) {
 }
 
 async function downloadSectionData(section) {
-    let resp = await fetch(url1 + section + url2);
-    if (resp.status >= 200) {
-        let data = await resp.json();
-        renderMain(section, data);
+    try {
+        let resp = await fetch(url1 + section + url2);
+        if (resp.status >= 200) {
+            let data = await resp.json();
+            console.log(data);
+            renderMain(section, data);
+        }
+    } catch (error) {
+        console.log(error)
     }
 
 }
