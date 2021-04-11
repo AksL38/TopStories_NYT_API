@@ -79,7 +79,7 @@ function renderCard(data, section) {
     createDomElement('p', cardBody, [['class', 'date-card']], [['textContent', new Intl.DateTimeFormat('en-US', {month:'long'}).format(createdDate) + ' ' + createdDate.getDate()]]);
     createDomElement('p', cardBody, [['class', 'abstract-card']], [['textContent', data.abstract]]);
     createDomElement('a', cardBody, [['href', data.url], ['class', 'continueReading']], [['textContent', 'Continue reading...']]);
-    createDomElement('img', cardRow, [['class', 'img-thumbnail col-md-4 p-0 m-0'], ['src', data.multimedia[4].url]]);    
+    createDomElement('img', cardRow, [['class', 'img-thumbnail col-md-4 p-0 m-0'], ['src', data.multimedia[4].url], ['target', '_blank']]);    
 }
 
 function createDomElement(elemtype, parent, attributes = [], properties = []) {
